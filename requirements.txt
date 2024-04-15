@@ -1,0 +1,14 @@
+asgiref
+backports.zoneinfo
+certifi
+charset-normalizer
+Django
+django-ckeditor
+django-js-asset
+idna
+Pillow
+requests
+sqlparse
+stripe
+typing-extensions
+urllib3

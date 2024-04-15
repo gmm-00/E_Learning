@@ -1,0 +1,118 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'img'%}">
+<style>
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-image: url('{% static 'img/a.png' %}'); /* Update this with the correct image path */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #d2b48c;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu-item {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #695959;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    border: 1px solid #695959;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #503030;
+    border-color: #503030;
+  }
+
+
+.slogan {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #003366;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 20px;
+ /* background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  max-width: 80%;
+  position: absolute; /* Position the slogan */
+  top: 18%; /* Adjust the vertical position */
+  right: 789px; /* Adjust the horizontal position */
+  transform: translateY(-50%); /* Center vertically */
+}
+  .text {
+  font-size: 1.2em; /* Adjust size as needed */
+  font-weight: bold;
+  color: #C0C0C0; /* Dark blue color */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75); /* More pronounced shadow for depth */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* A more elegant font */
+  padding: 18px;
+
+ /* Box shadow for a subtle 3D effect */
+  max-width: 80%; /* Limiting the width for better layout */
+  margin:auto;
+  margin-right: 537px;
+  margin-bottom: 243px; /* Centering the slogan */
+}
+  .action-button {
+    padding: 15px 30px;
+    background-color: #FFA500; /* Bright color for visibility */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .action-button:hover {
+    background-color: #FF8C00; /* Darker shade for hover effect */
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="menu">
+      <a href="{% url 'login' %}" class="menu-item">Login</a>
+      <a href="{% url 'register' %}" class="menu-item">Sign up</a>
+    </div>
+  </div>
+  <div class="slogan">Learn Anytime, Anywhere.<br>
+   Elevate Your Knowledge!</div>
+
+   <div class="text">Empower Your Learning<br>Today!!
+</div>
+
+
+</body>
+</html>

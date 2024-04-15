@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block start %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    /* Use Roboto font for better typography */
+    body, h5, p, .badge, a.btn-primary {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* CSS to define card image dimensions */
+    .card-img {
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .course-card {
+        max-width: 400px;
+        margin: 0 auto 30px;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-card:hover .card-img {
+        transform: scale(1.05);
+    }
+
+    /* Set a gradient background for the body */
+    body {
+
+
+        background: linear-gradient(135deg, #F5FFFA 0%, #E9F5DB 100%);
+    }
+
+    /* Style badges */
+    .badge {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .badge-success {
+        background-color: #4CAF50;
+    }
+
+    .badge-danger {
+        background-color: #F44336;
+    }
+
+    /* Style course titles and descriptions */
+    .card-title {
+        font-size: 1.2em;
+        color: #333;
+        font-weight: normal;
+        margin-top: 10px;
+    }
+
+    .card-description {
+        font-size: 1em;
+        color: #666;
+    }
+
+    /* Style the "View Course" button */
+    .btn-primary {
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        {% for c in courses %}
+        <div class="col-lg-4">
+            <div class="card shadow course-card">
+                <img src="/media/{{c.course_image}}" class="card-img-top card-img">
+                <div class="card-body">
+                    {% if c.is_premium %}
+                    <span class="badge badge-success">Premium</span>
+                    {% else %}
+                    <span class="badge badge-danger">Free</span>
+                    {% endif %}
+                    <h5 class="card-title">{{c.course_name}}</h5>
+                    <p class="card-description">{{ c.course_description | safe }}</p>
+                    <a href="{% url 'course' c.slug %}" class="btn btn-primary">View Course</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

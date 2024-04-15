@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^http://127.0.0.1:8000/course/mathmatics/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://127.0.0.1:8000/course/mathmatics/.*$ [NC]
+RewriteRule .(mp4|mp3|avi)$ - [F]
+
